@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 1: Introduction</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1><%= bookData.bookTitle %></h1>
+        <p>By <%= bookData.author %></p>
+      </header>
+      <div>
+        <% chapters.forEach(function(chapter) { %>
+          <h2><%= chapter.chapterTitle %></h2>
+          <p><%= chapter.chapterContent %></p>
+          <p>Published on <%= chapter.publicationDate %></p>
+        <% }); %>
+
+        <a href="<%= prevChapterUrl %>">Previous Chapter</a> <br>
+      </div>
+      <footer>
+        <p>Copyright © <%= new Date().getFullYear() %> <%= bookData.author %></p>
+      </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>
